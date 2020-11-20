@@ -17,7 +17,7 @@ class Car {
   }
 
   set turnOn(price) {
-    this.price = price;
+    return (this.price = price);
   }
 
   /*
@@ -64,8 +64,7 @@ class Car {
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-    // this.speed -= value;
-    if (this.speed - value !== 0) {
+    if (this.speed - value >= 0) {
       this.speed -= value;
       return true;
     } else {
@@ -78,7 +77,9 @@ class Car {
    * но только в том случае если машина заведена!
    */
   drive(hours) {
-    this.distance = hours * this.speed;
+    if (this.isOn) {
+      return (this.distance = hours * this.speed);
+    }
   }
 }
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
