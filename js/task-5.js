@@ -5,19 +5,19 @@ class Car {
     this.speed = speed;
     this.isOn = isOn;
     this.distance = distance;
-    this.price = price;
+    this._price = price;
   }
 
   static getSpecs(Car) {
     console.log(Car);
   }
 
-  get newPrice() {
-    return this.price;
+  get price() {
+    return this._price;
   }
 
-  set newPrice(value) {
-    return (this.price = value);
+  set price(value) {
+    return (this._price = value);
   }
 
   /*
