@@ -3,13 +3,13 @@ class Storage {
     this.items = items;
   }
   getItems() {
-    return [this.items];
+    return this.items;
   }
   addItem(items) {
-    storage.items.push(items);
+    this.items.push(items);
   }
   removeItem(items) {
-    storage.items = storage.items.filter((item) => item !== items);
+    this.items = storage.items.filter((item) => item !== items);
   }
 }
 const storage = new Storage(["Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор"]);

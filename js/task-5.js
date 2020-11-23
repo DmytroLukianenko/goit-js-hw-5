@@ -12,12 +12,12 @@ class Car {
     console.log(Car);
   }
 
-  get turnOn() {
+  get newPrice() {
     return this.price;
   }
 
-  set turnOn(price) {
-    return (this.price = price);
+  set newPrice(value) {
+    return (this.price = value);
   }
 
   /*
@@ -53,9 +53,7 @@ class Car {
   accelerate(value) {
     if (this.speed + value <= this.maxSpeed) {
       this.speed += value;
-      return true;
-    } else {
-      return false;
+      return;
     }
   }
 
@@ -66,9 +64,7 @@ class Car {
   decelerate(value) {
     if (this.speed - value >= 0) {
       this.speed -= value;
-      return true;
-    } else {
-      return false;
+      return;
     }
   }
 
